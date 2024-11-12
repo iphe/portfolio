@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="img/jpg" href="./FAVICON.jpg">
+</head>
+<body>
+    <header>
+        <nav>
+        
+            <ul class="sidebar">
+                <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></span></a></li>
+                <li><a href="index.html"> Home</a></li>
+                <li><a href="about.html" style="background: #f9004d;">About</a></li>About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <ul>
+                <li><a href="index.html">EM<span style="color: #f9004d">MY</span></a></li>
+                <li class="hidemobile"><a href="index.html"> Home</a></li>
+                <li class="hidemobile"><a href="about.html" style="background:#f9004d;">About</a></li>
+                <li class="hidemobile"><a href="projects.html">Projects</a></li>
+                <li class="hidemobile"><a href="skills.html">Skills</a></li>
+                <li class="hidemobile"><a href="contact.html">Contact</a></li>
+                <li><a  href="./cv-dev-latest.docx" class="btn">Download CV</a></li>
+                <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+            </ul>
+        </nav>    
+    </header>
+ <main>
+        <div class="about">
+         <div class="about-image">
+            <img src="profile.jpg">
+         </div>
+            <div class="about-text">
+                <h2>About Me</h2>
+                <h5>Frontend <span>Developer</span> </h5>
+                <P>With a keen eye for detail and a strong commitment
+                   to writing clean, maintainable code, I strive to 
+                   build responsive, accessible, and performance-optimized 
+                   websites and applications. My journey in web development
+                   began with a curiosity for how websites work and has grown
+                   into a full-fledged career where I get to solve problems 
+                   and bring creative ideas to life.
+                </P>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Web Development & Management</span></li>
+                        <li>Proficiency in HTML5, CSS and JAVASCRIPT.</li>
+                        <li><span>Hardware & Technical Support</span></li>
+                        <li>Expert in diagnosing and repairing computer hardware issues.</li>
+                        <li>Skilled in remote technical support and troubleshooting.</li>
+                        <li>Proficient in software installations, upgrades, and system optimizations.</li>   
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>2023-2024</span></li>
+                        <li>NYSC Service Year(Upperlink Limited).</li>
+                        <li><span>2022-2023</span></li>
+                        <li>Technical Support(Emmanuel Alayende University of Education).</li>
+                        <li><span>2019-2020</span></li>
+                        <li>National Diploma IT(Ifedapo Microfinance Bank).</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2020-2023</span></li>
+                        <li>Bachelor of Science (B.Sc.) in Computer Science</li>
+                        <li>Kwara State University, Malete.</li>
+                        <li><span>2015-2017</span></li>
+                        <li>National Diploma (ND) in Computer Science</li>
+                        <li>The Polytechnic, Ibadan.</li>   
+                    </ul>
+                </div>
+                <button class="about-btn"><a href="https://wa.me/09043307885" target="_blank">Let's Talk</a></button>
+            </div>
+        </div>
+  </main>
+
+    <script>
+        /*for navbar*/
+        function showSidebar(){
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.display = 'flex'
+        }
+        function hideSidebar(){
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.display = 'none'
+        }
+     
+        /*for about section*/
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");   
+        }
+  </script>         
+</body>
+</html>

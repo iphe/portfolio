@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="img/jpg" href="./FAVICON.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+</head>
+<body>
+    <nav>
+        <ul class="sidebar">
+            <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></span></a></li>
+            <li><a href="index.html"> Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html" style="background: #f9004d;">Contact</a></li>
+        </ul>
+        <ul>
+            <li><a href="index.html">EM<span style="color: #f9004d">MY</span></a></li>
+            <li class="hidemobile"><a href="index.html"> Home</a></li>
+            <li class="hidemobile"><a href="about.html">About</a></li>
+            <li class="hidemobile"><a href="projects.html">Projects</a></li>
+            <li class="hidemobile"><a href="skills.html">Skills</a></li>
+            <li class="hidemobile"><a href="contact.html" style="background: #f9004d;">Contact</a></li>
+            <li><a  href="./cv-dev-latest.docx" class="btn">Download CV</a></li>
+            <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+        </ul>
+    </nav>    
+    <div class="contact">
+        <div class="contact-text">
+            <h2><span>CON</span>TACT</h2>
+            <p>For enquiries reach out on:</p>
+        </div>
+        <div class="contact-form">
+            <form method="post" onsubmit="sendMail()" id="emailForm">
+                <input type="text" id="name" name="name" placeholder="NAME" required><br>
+                <input type="email" name="mail" id="email" placeholder="ENTER YOUR EMAIL" required><br>
+                <textarea name="message" id="message" placeholder="MESSAGE" required></textarea><br>
+                <input type="submit" name="submit" id="submit" value="SEND ME A MESSAGE">
+            </form>
+        </div>
+         
+        <div class="socialmedia-icons">
+            <a href="https://instagram.com/__iphe_" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+            <a href="https://facebook.com/iphe.aderounmu?mibextid=LQQJ4d" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
+            <a href="https://linkedin.com/in/emmy12345" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://wa.me/09043307885" target="_blank"><i class="fa-brands fa-square-whatsapp"></i></a>
+        </div>
+            
+        <div class="contact-me">
+            <p><i class="fa-solid fa-paper-plane"></i>aderounmuiphe@gmail.com</p>
+            <p><i class="fa-solid fa-phone"></i>+234 9043307885</p>
+        </div>
+    </div>
+    <div class="copyright">
+        <P>&copy;2024 Emmanuel.All rights reserved.</P>  
+    </div>  
+
+
+    <script>
+        function showSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'flex'
+        }
+        function hideSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'none'
+    
+        }
+
+        function sendMail() {
+            alert("Email Sent Successfully");
+        }
+    </script>
+    
+    <script>
+      function sendEmail() {
+        const form = document.getElementById('emailForm');
+        const name = form.elements.name.value;
+        const senderEmail = form.elements.mail.value;
+        const message = form.elements.message.value;
+      
+        // Hardcoded recipient email
+        const recipientEmail = 'mr3318505@gmail.com';
+      
+        // Construct mailto link
+        const mailLink = `mailto:${recipientEmail}?subject=Contact%20from%20Website&body=${encodeURIComponent(`Name: ${name}%0D%0AEmail: ${senderEmail}%0D%0AMessage: ${message}`)}`;
+      
+        // Simulate click on mailto link
+        window.location.href = mailLink;
+      }
+      
+      // Add event listener to form submit
+      document.getElementById('emailForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent default form submission
+        sendEmail();
+      });
+      </script>
+      
+</body>
+</html>
