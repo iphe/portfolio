@@ -70,11 +70,6 @@
         function hideSidebar(){
             const sidebar = document.querySelector('.sidebar')
             sidebar.style.display = 'none'
-    
-        }
-
-        function sendMail() {
-            alert("Email Sent Successfully");
         }
     </script>
     
@@ -86,7 +81,7 @@
         const message = form.elements.message.value;
       
         // Hardcoded recipient email
-        const recipientEmail = 'mr3318505@gmail.com';
+        const recipientEmail = 'aderounmuivy@gmail.com';
       
         // Construct mailto link
         const mailLink = `mailto:${recipientEmail}?subject=Contact%20from%20Website&body=${encodeURIComponent(`Name: ${name}%0D%0AEmail: ${senderEmail}%0D%0AMessage: ${message}`)}`;
